@@ -25,4 +25,23 @@ public class AppDAOImpl implements AppDAO {
         entityManager.persist(theInstructor);
 
     }
+
+    @Override
+    // This will also retrieve the instructor details object
+    // because of default behavior of @OneToOne fetch is eager
+    public Instructor findInstructorById(int theId) {
+        return entityManager.find(Instructor.class, theId);
+    }
+
+    @Override
+    @Transactional
+    public void deleteInstructorById(int theId) {
+
+        // retrieve the instructor
+        Instructor tempInstructor = entityManager.find(Instructor.class, theId);
+
+        // delete the instructor
+        entityManager.remove(tempInstructor);
+
+    }
 }

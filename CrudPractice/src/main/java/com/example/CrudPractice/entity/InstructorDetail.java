@@ -17,6 +17,9 @@ public class InstructorDetail {
     @Column(name="hobby")
     private String hobby;
 
+    public InstructorDetail() {
+    }
+
     public InstructorDetail(int id) {
         this.id = id;
     }

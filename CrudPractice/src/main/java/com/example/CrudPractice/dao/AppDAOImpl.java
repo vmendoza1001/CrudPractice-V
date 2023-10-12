@@ -1,6 +1,7 @@
 package com.example.CrudPractice.dao;
 
 import com.example.CrudPractice.entity.Instructor;
+import com.example.CrudPractice.entity.InstructorDetail;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -43,5 +44,21 @@ public class AppDAOImpl implements AppDAO {
         // delete the instructor
         entityManager.remove(tempInstructor);
 
+    }
+
+    @Override
+    public InstructorDetail findInstructorDetailById(int theId) {
+        return entityManager.find(InstructorDetail.class, theId);
+    }
+
+    @Override
+    @Transactional
+    public void deleteInstructorDetailById(int theId) {
+
+        // retrieve instructor detail
+        InstructorDetail tempInstructorDetail = entityManager.find(InstructorDetail.class, theId);
+
+        // delete the instructor detail
+        entityManager.remove(tempInstructorDetail);
     }
 }

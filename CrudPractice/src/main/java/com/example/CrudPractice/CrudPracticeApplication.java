@@ -19,7 +19,7 @@ public class CrudPracticeApplication {
 	public CommandLineRunner commandLineRunner(AppDAO appDAO) {
 
 		return runner -> {
-			//	createInstructor(appDAO);
+			// createInstructor(appDAO);
 
 			//	findInstructor(appDAO);
 
@@ -27,13 +27,13 @@ public class CrudPracticeApplication {
 
 			// findInstructorDetail(appDAO);
 			
-			deleteInstructorDetail(appDAO);
+			 deleteInstructorDetail(appDAO);
 		};
 	}
 
 	private void deleteInstructorDetail(AppDAO appDAO) {
 
-		int theId = 3;
+		int theId = 4;
 		System.out.println("Deleting instructor detail id: " + theId);
 
 		appDAO.deleteInstructorDetailById(theId);

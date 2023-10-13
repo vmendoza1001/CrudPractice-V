@@ -26,9 +26,22 @@ public class CrudPracticeApplication {
 
 			// createCourseAndReviews(appDAO);
 
-			retrieveCourseAndReviews(appDAO);
+			// retrieveCourseAndReviews(appDAO);
+
+			deleteCourseAndReviews(appDAO);
 
 		};
+	}
+
+	private void deleteCourseAndReviews(AppDAO appDAO) {
+
+		int theId = 10;
+
+		System.out.println("Deleting course id: ");
+
+		appDAO.deleteCourseById(theId);
+
+		System.out.println("Done!");
 	}
 
 	private void retrieveCourseAndReviews(AppDAO appDAO) {
